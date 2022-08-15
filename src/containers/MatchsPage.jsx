@@ -2,42 +2,41 @@ import React, { useState } from "react";
 import styles from "@styles/matchsPages.module.css";
 const MatchsPage = () => {
   let removedUser;
-  let lastRemovedUser;
   const [removedUsersList, setRemovedUsersList] = useState([]);
   const [userState, setUserState] = useState("static");
   const [users, setUsers] = useState([
     {
       id: "Juan",
-      age:19,
-      recentlyActive:true,
+      age: 19,
+      recentlyActive: true,
       color: "HotPink",
-      description:"Me gusta pescar"
+      description: "Me gusta pescar",
     },
     {
       id: "MARCELA",
-      age:19,
-      recentlyActive:true,
+      age: 19,
+      recentlyActive: true,
       color: "Lavender",
-      description:"UWUWUWU"
+      description: "UWUWUWU",
     },
     {
       id: "CARLOS",
-      age:19,
-      recentlyActive:true,
+      age: 19,
+      recentlyActive: true,
       color: "#77dd77",
-      description:"UWUWUWU"
+      description: "UWUWUWU",
     },
     {
       id: "PAMELA",
-      age:19,
-      recentlyActive:true,
+      age: 19,
+      recentlyActive: true,
       color: "#fdcae1",
-      description:"UWUWUWU"
+      description: "UWUWUWU",
     },
   ]);
   let action = userState;
   const changeUser = (type) => {
-    if ((type === "like"  || type === "nope") && users.length > 0) {
+    if ((type === "like" || type === "nope") && users.length > 0) {
       setUserState(type);
       setTimeout(() => {
         removedUser = {
@@ -51,7 +50,7 @@ const MatchsPage = () => {
     } else if (type === "retry" && removedUsersList.length > 0) {
       setUserState(type);
       setUsers([removedUsersList[0].user, ...users]);
-      setTimeout(()=>{
+      setTimeout(() => {
         setRemovedUsersList(
           removedUsersList.filter(
             (user) => user.user !== removedUsersList[0].user
@@ -59,7 +58,7 @@ const MatchsPage = () => {
         );
 
         setUserState("static");
-      },200)
+      }, 200);
     }
   };
   return (
@@ -93,22 +92,19 @@ const MatchsPage = () => {
               <div className={styles["message"]}></div>
               <div className={styles["description"]}>
                 <div className={styles["info"]}>
-                  <div className={styles["main-info"]} >
-                  <span className={styles["name"]}>{user.id}</span>
-                  <span className={styles["age"]}>{user.age}</span>
+                  <div className={styles["main-info"]}>
+                    <span className={styles["name"]}>{user.id}</span>
+                    <span className={styles["age"]}>{user.age}</span>
                   </div>
-                  {
-                    (user.recentlyActive) 
-                      ? 
-                        <div className={styles["recendly-active"]}>
-                          <span className={styles["dot"]}></span>
-                          <span>Recendly active</span>
-                        </div>
-                      : null
-                  }
+                  {user.recentlyActive ? (
+                    <div className={styles["recendly-active"]}>
+                      <span className={styles["dot"]}></span>
+                      <span>Recendly active</span>
+                    </div>
+                  ) : null}
                   <p>{user.description}</p>
                 </div>
-                <span  className={styles["more-info-icon"]} ></span>
+                <span className={styles["more-info-icon"]}></span>
               </div>
               <div className={styles["buttons-background"]}></div>
             </div>

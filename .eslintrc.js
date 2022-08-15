@@ -8,7 +8,6 @@ module.exports={
   },
   extends:[
     "eslint:recommended",
-    "plugin:jsx-a11y/recommended",
     "eslint:recommended",
     "next",
     "next/core-web-vitals"
