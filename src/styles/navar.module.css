@@ -1,0 +1,65 @@
+.nav-container{
+    align-self: flex-end;
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+} 
+
+.nav-container ul{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-container li{
+    list-style: none;
+}
+
+.nav-container input{
+    opacity: 0;
+    position: absolute;
+    transform: translate(-15%,-15%);
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.nav-container span{
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    /* background-color: aquamarine; */
+}
+
+#tinder-icon span{
+    background-image: url("../assets/icons/nav-icons/logo.svg");
+}
+#tinder-icon input:checked + span{
+    background-image: url("../assets/icons/nav-icons/logo-active.svg");
+}
+
+#magic-icon span{
+    background-image: url("../assets/icons/nav-icons/magic.svg");
+}
+#magic-icon input:checked + span{
+    background-image: url("../assets/icons/nav-icons/magic-active.svg");
+}
+
+#search-icon span{
+    background-image: url("../assets/icons/nav-icons/search.svg");
+}
+#search-icon input:checked + span{
+    background-image: url("../assets/icons/nav-icons/search-active.svg");
+}
+
+#chat-icon span{
+    background-image: url("../assets/icons/nav-icons/chat.svg");
+}
+#chat-icon input:checked + span{
+    background-image: url("../assets/icons/nav-icons/chat-active.svg");
+}

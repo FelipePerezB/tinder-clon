@@ -1,0 +1,25 @@
+.logo-container{
+    padding: 0 1rem;
+    display: flex;
+    color: #ff6b6b;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 100vw;
+    height: 5rem;
+    background-color: white;
+}
+
+.logo{
+    display: flex;
+    align-items:center;
+    transform: translate(calc(50vw - 50% - 4rem));
+    height: 100%;
+}
+
+.account{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../assets/icons/others/account.svg");
+}
