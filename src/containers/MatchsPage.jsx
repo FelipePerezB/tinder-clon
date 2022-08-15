@@ -113,9 +113,9 @@ const MatchsPage = () => {
         {/* </div> */}
         <div className={styles["buttons"]}>
           <span id={styles["retry"]} onClick={() => changeUser("retry")}></span>
-          <span id={styles["like"]} onClick={() => changeUser("like")}></span>
-          <span id={styles["star"]}></span>
           <span id={styles["nope"]} onClick={() => changeUser("nope")}></span>
+          <span id={styles["star"]}></span>
+          <span id={styles["like"]} onClick={() => changeUser("like")}></span>
           <span id={styles["boost"]}></span>
         </div>
       </div>
