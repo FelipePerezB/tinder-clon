@@ -16,46 +16,132 @@
   background-color: beige;
 }
 
-.users{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-}
-
-.static, .nope, .like{
+.static,
+.nope,
+.like {
   grid-row: 1/3;
   animation-fill-mode: forwards;
   position: absolute;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 6rem 4.5rem;
+  grid-template-rows: 1fr 9rem 4.5rem;
 }
 
-.like{
+.like {
   animation: like 500ms;
 }
-.nope{
+.nope {
   animation: nope 500ms;
 }
-.retry{
-  transform: rotate(-25deg) translate(100vw, 100vh);
-  animation: retry 500ms;
+.retry {
+  animation: retry 2s;
 }
 
-.description{
+.nope .message,
+.like .message {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.8rem;
+  padding: 1rem;
+  position: absolute;
+  transform: rotate(-10deg) translate(1rem, 2rem);
+  z-index: 100;
+  width: 10rem;
+  height: 5rem;
+}
+
+.like .message {
+  color: #3bc377;
+  border: 4px solid #3bc377;
+}
+.like .message::after {
+  content: "LIKE";
+}
+
+.nope .message {
+  letter-spacing: 0.4rem;
+  color: red;
+  border: 4px solid red;
+  content: "NOPE";
+}
+
+.nope .message::after {
+  content: "NOPE";
+}
+
+.description {
+  padding: 0.8rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  /* justify-content: space-around; */
+  align-items:center;
   grid-row: 2/3;
-  width: 100%;
   height: 100%;
   background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(48, 48, 48, 0) 100%);
 }
 
+.more-info-icon{
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/icons/others/info.svg");
+}
+
+.more-info-icon:hover{
+  cursor: pointer;
+}
+
+.info{
+  overflow:hidden;
+  font-size: 0.9rem;
+  /* text-overflow: ellipsis; */
+  width: calc(100% - 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.info p{
+  margin: 0;
+}
+
+.name{
+  margin: 0 0.4rem 0 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.age{
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.recendly-active{
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.dot{
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: #30e6a6;
+  border-radius: 100%;
+}
+
 .buttons-background {
-  grid-row: 3/4;
+  position: absolute;
+  bottom: 0;
+  grid-row: 2/4;
   background-color: black;
   width: 100%;
-  height: 4.5rem;
+  height: 4.6rem;
 }
 
 .buttons {
@@ -74,6 +160,10 @@
   display: inline-block;
   border-radius: 100%;
   padding: 1.6rem;
+}
+
+.buttons span:hover {
+  cursor: pointer;
 }
 
 #retry {
@@ -132,10 +222,10 @@
   background-image: url("../assets/icons/match-icons/boost-active.svg");
 }
 
-@keyframes retry{
-  /* from{
+@keyframes retry {
+  from {
     transform: rotate(-25deg) translate(100vw, 100vh);
-  } */
+  }
   to {
     transform: rotate(0deg) translate(0, 0);
   }

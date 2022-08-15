@@ -1,4 +1,6 @@
 .layout{
+    transform: translate(calc(50vw - 50%));
+    max-width: 25rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;

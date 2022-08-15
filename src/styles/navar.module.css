@@ -26,6 +26,10 @@
     height: 3.5rem;
 }
 
+.nav-container input:hover{
+    cursor: pointer;
+}
+
 .nav-container span{
     display: inline-block;
     background-position: center;

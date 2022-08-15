@@ -7,17 +7,37 @@ const MatchsPage = () => {
   const [userState, setUserState] = useState("static");
   const [users, setUsers] = useState([
     {
-      id: "JUAN",
+      id: "Juan",
+      age:19,
+      recentlyActive:true,
       color: "HotPink",
+      description:"Me gusta pescar"
     },
     {
       id: "MARCELA",
+      age:19,
+      recentlyActive:true,
       color: "Lavender",
+      description:"UWUWUWU"
+    },
+    {
+      id: "CARLOS",
+      age:19,
+      recentlyActive:true,
+      color: "#77dd77",
+      description:"UWUWUWU"
+    },
+    {
+      id: "PAMELA",
+      age:19,
+      recentlyActive:true,
+      color: "#fdcae1",
+      description:"UWUWUWU"
     },
   ]);
   let action = userState;
   const changeUser = (type) => {
-    if (type === "like" || type === "nope") {
+    if ((type === "like"  || type === "nope") && users.length > 0) {
       setUserState(type);
       setTimeout(() => {
         removedUser = {
@@ -57,7 +77,7 @@ const MatchsPage = () => {
                 action = "nope";
                 break;
               case "retry":
-                action = "nope";
+                action = "retry";
                 break;
               default:
                 action = "static";
@@ -70,7 +90,26 @@ const MatchsPage = () => {
               style={{ background: user.color, zIndex: 50 - userIndex }}
               className={styles[action]}
             >
-              <div className={styles["description"]}></div>
+              <div className={styles["message"]}></div>
+              <div className={styles["description"]}>
+                <div className={styles["info"]}>
+                  <div className={styles["main-info"]} >
+                  <span className={styles["name"]}>{user.id}</span>
+                  <span className={styles["age"]}>{user.age}</span>
+                  </div>
+                  {
+                    (user.recentlyActive) 
+                      ? 
+                        <div className={styles["recendly-active"]}>
+                          <span className={styles["dot"]}></span>
+                          <span>Recendly active</span>
+                        </div>
+                      : null
+                  }
+                  <p>{user.description}</p>
+                </div>
+                <span  className={styles["more-info-icon"]} ></span>
+              </div>
               <div className={styles["buttons-background"]}></div>
             </div>
           );
