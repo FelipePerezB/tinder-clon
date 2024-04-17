@@ -1,0 +1,86 @@
+.panel-background{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #f4f4f5;
+    display: grid;
+}
+.panel{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+}
+.panel > *{
+    width: 100%;
+    height: max-content;
+    /* background-color: white; */
+}
+.options-header{
+    padding: 0.8rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: #ec4c79;
+}
+.subtitle{
+    font-weight: 300;
+    margin: 0;
+}
+
+.select-user, .edit-button{
+    width: 90%;
+    height: 5rem;
+    position: absolute;
+    opacity: 0;
+}
+
+.select-user:checked + .user{
+    outline: 2px #ec4c79 solid;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0.8rem;
+    height: max-content;
+}
+
+.user{
+    padding: 1rem;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 3rem 1fr 2rem;
+    background-color: white;
+    /* outline: #ec4c79 2px solid; */
+    gap: 0.8rem;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.user-image{
+    background-color: #ec4c79;
+    outline: white 2px solid;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+}
+
+.edit{
+    color: blue;
+}
+
+.edit-button{
+    opacity: 1;
+}
+
+.edit-button:checked + span{
+    background-color: aqua;
+}
+.edit:active{
+    color: rgb(1, 1, 168);
+    cursor: pointer;
+}

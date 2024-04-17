@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import avatar1 from "@assets/images/avatar1.webp"
+import avatar2 from "@assets/images/avatar2.jpg"
 import styles from "@styles/matchsPages.module.css";
+import Image from "next/image";
 const MatchsPage = () => {
+  
   let removedUser;
   const [removedUsersList, setRemovedUsersList] = useState([]);
+  const [matchUsers, setMatchUsers] = useState([]);
   const [userState, setUserState] = useState("static");
   const [users, setUsers] = useState([
     {
@@ -11,6 +16,7 @@ const MatchsPage = () => {
       recentlyActive: true,
       color: "HotPink",
       description: "Me gusta pescar",
+      avatar: avatar1
     },
     {
       id: "MARCELA",
@@ -18,6 +24,7 @@ const MatchsPage = () => {
       recentlyActive: true,
       color: "Lavender",
       description: "UWUWUWU",
+      avatar: avatar2
     },
     {
       id: "CARLOS",
@@ -25,6 +32,7 @@ const MatchsPage = () => {
       recentlyActive: true,
       color: "#77dd77",
       description: "UWUWUWU",
+      avatar: avatar1
     },
     {
       id: "PAMELA",
@@ -32,6 +40,7 @@ const MatchsPage = () => {
       recentlyActive: true,
       color: "#fdcae1",
       description: "UWUWUWU",
+      avatar: avatar2
     },
   ]);
   let action = userState;
@@ -58,7 +67,7 @@ const MatchsPage = () => {
         );
 
         setUserState("static");
-      }, 200);
+      }, 250);
     }
   };
   return (
@@ -86,9 +95,12 @@ const MatchsPage = () => {
           return (
             <div
               key={user.id}
-              style={{ background: user.color, zIndex: 50 - userIndex }}
+              style={{zIndex: 50 - userIndex }}
               className={styles[action]}
             >
+              <div className={styles["avatar"]}>
+                <Image layout={"responsive"} width={9} height={16} src={user.avatar}/>
+              </div>
               <div className={styles["message"]}></div>
               <div className={styles["description"]}>
                 <div className={styles["info"]}>

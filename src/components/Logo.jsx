@@ -8,7 +8,7 @@ const Logo = () => {
     <div className={styles["logo-container"]}>
       <span className={styles["account"]}></span>
       <span className={styles["logo"]}>
-        <Image alt="tinder-logo" src={logo} />
+        <Image width={16} height={16} alt="tinder-logo" src={logo} />
         <span>tinder</span>
       </span>
     </div>
